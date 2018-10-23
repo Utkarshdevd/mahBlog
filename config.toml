@@ -1,0 +1,39 @@
+baseurl = "https://utkarshdevd.github.io/"
+title = "Mah Blog"
+copyright = "Copyright &copy; 20178 - Utkarsh Dwivedi"
+canonifyurls = true
+theme = "kiera"
+
+paginate = 3
+
+summaryLength = 30
+enableEmoji = true
+pygmentsCodeFences = true
+
+[author]
+    name = "Utkarsh Dwivedi"
+    github = "https://github.com/Utkarshdevd"
+    gitlab = ""
+    linkedin = "https://www.linkedin.com/in/utkarsh-dwivedi-4721b41b/"
+    facebook = ""
+    twitter = ""
+    instagram = ""
+
+[params]
+    tagline = "Storing digitized notes"
+
+[[menu.main]]
+
+    name = "Home" #Name in the navigation bar
+
+    weight = 10 #The larger the weight, the more on the right this item will be
+
+    url = "/" #URL address
+
+[[menu.main]]
+
+    name = "Posts"
+
+    weight = 20
+
+    url = "/posts/"
