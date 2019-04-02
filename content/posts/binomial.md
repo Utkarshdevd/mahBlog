@@ -1,7 +1,6 @@
 +++
 title = "Binomial distribution, Mean and variance derivations"
 date = 2019-04-02T14:48:13-04:00
-draft = true
 tags = []
 categories = []
 +++
