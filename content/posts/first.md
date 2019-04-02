@@ -29,4 +29,4 @@ $$WorkingCapital = CurrentLiabilities - CurrentAssets$$
 
 **Financial leverage** is making money on debt which is equally risky. Investors look on Debt2Equity ratio to judge.
 
-COGS: Cost of goods sold.
+**COGS**: Cost of goods sold.
