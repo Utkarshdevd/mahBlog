@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Mah Blog</title>
+    <link>https://utkarshdevd.github.io/posts/</link>
+    <description>Recent content in Posts on Mah Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright &amp;copy; 20178 - Utkarsh Dwivedi</copyright>
+    <lastBuildDate>Tue, 02 Apr 2019 14:48:13 -0400</lastBuildDate>
+    
+	<atom:link href="https://utkarshdevd.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Binomial distribution, Mean and variance derivations</title>
+      <link>https://utkarshdevd.github.io/posts/binomial/</link>
+      <pubDate>Tue, 02 Apr 2019 14:48:13 -0400</pubDate>
+      
+      <guid>https://utkarshdevd.github.io/posts/binomial/</guid>
+      <description>Binomial distribution is defined as, $$Binomial(r,n,p) = {}^{n}C_{r}\,\, p^r {(1-p)}^{n-r}\quad (1)$$
+Finding expected value of the Binomial distribution We need to find $E[r]$ using the definition
+$$E[x] = \int x P(x)dx\quad (2)$$</description>
+    </item>
+    
+    <item>
+      <title>Startup</title>
+      <link>https://utkarshdevd.github.io/posts/startup/</link>
+      <pubDate>Tue, 27 Nov 2018 23:49:08 -0500</pubDate>
+      
+      <guid>https://utkarshdevd.github.io/posts/startup/</guid>
+      <description>Moats and the unintentional evil corporation Economic moats are a key investing concept that almost every successful investor touts as one of their &amp;ldquo;first principles&amp;rdquo; in long term investing. They are generally of 4 types:</description>
+    </item>
+    
+    <item>
+      <title>Balance sheet basics</title>
+      <link>https://utkarshdevd.github.io/posts/first/</link>
+      <pubDate>Tue, 23 Oct 2018 11:00:11 -0400</pubDate>
+      
+      <guid>https://utkarshdevd.github.io/posts/first/</guid>
+      <description>Balance sheet is a snapshot of a companie&amp;rsquo;s financials. It shows the accmulated depriciation for all the assets. $$Assets - Liabilities = Equity$$ This is the key equation to be followed.</description>
+    </item>
+    
+  </channel>
+</rss>

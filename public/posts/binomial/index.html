@@ -1,0 +1,223 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Mah Blog</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Utkarsh Dwivedi" />
+  <meta name="generator" content="Hugo 0.40.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://utkarshdevd.github.io/css/styles.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://utkarshdevd.github.io/">Mah Blog</a>
+            </h1>
+
+      <ul id="social-media">
+         
+        <li><a href="https://www.linkedin.com/in/utkarsh-dwivedi-4721b41b/"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/Utkarshdevd"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+           
+      </ul>
+      
+      <p><em>Storing digitized notes</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://utkarshdevd.github.io/">
+                <i class="fa-li fa  fa-lg"></i><span>Home</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://utkarshdevd.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://utkarshdevd.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Binomial distribution, Mean and variance derivations</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2019-04-02T14:48:13-04:00">Apr 2, 2019</time>
+        </li>
+        
+        
+
+        
+
+        <li>2 min read</li>
+    </ul>
+</aside>
+    
+
+    
+
+<p>Binomial distribution is defined as,
+$$Binomial(r,n,p) = {}^{n}C_{r}\,\, p^r {(1-p)}^{n-r}\quad (1)$$</p>
+
+<h3 id="finding-expected-value-of-the-binomial-distribution">Finding expected value of the Binomial distribution</h3>
+
+<p>We need to find $E[r]$ using the definition</p>
+
+<p>$$E[x] = \int x P(x)dx\quad (2)$$</p>
+
+<p>So, plugging in $r$ from $(1)$ in $(2)$, we get</p>
+
+<p>$$E[r] = \int r\, ^{n}C_r\,\, p^r {(1-p)}^{n-r} dr$$</p>
+
+<p>which is equivalent to,</p>
+
+<p>$$E[r] = \int r\, \frac{n!}{r!(n-r)}\, p^r {(1-p)}^{n-r} dr$$</p>
+
+<p>we cancel $r$ and get</p>
+
+<p>$$E[r] = \int \frac{n!}{(r-1)!(n-r)}\, p^r {(1-p)}^{n-r} dr \quad (3)$$</p>
+
+<p>We substitute $r-1=k$,</p>
+
+<p>$$E[r] = \int \frac{n!}{(k)!(n-k-1)}\, p^(k+1) {(1-p)}^{n-k-1} dk$$</p>
+
+<p>then we expand the factorial of $n$ which is equivalent to,</p>
+
+<p>$$E[r] = n\int \frac{(n-1)!}{k!(n-k-1)}\, p^{(k+1)} {(1-p)}^{n-k-1} dk$$</p>
+
+<p>and then we break the $p^{k+1} = p\, p^k$ and since $^{n-1}C_k = \frac{(n-1)!}{(k)!(n-k-1)}$</p>
+
+<p>$$E[r] = np\,\int \,^{n-1}C_k\, p^{k}{(1-p)}^{n-k-1}dr \quad (4)$$</p>
+
+<p>from $(1)$, we substitute the definition of $Binomial(k,n-1,p)$ in $(4)$,</p>
+
+<p>$$E[r] = np \int Binomial(k,n-1,p) dk $$</p>
+
+<p>Since the quantity inside the integral is a distribution, it summs up to 1,</p>
+
+<p>$$E[r] = np$$</p>
+
+<h3 id="finding-the-variance-of-the-binomial-distribution">Finding the variance of the binomial distribution</h3>
+
+<p>We use the formula, since we know $E[x] = np$
+$$Var(x) = E[(x - E[x])^2] = E[x^2] - (E[x])^2 \quad (5)$$
+We write down $E[r^2]$ with $Binomial(r,n,p)$</p>
+
+<p>$$
+E[r^2] = \int r^2\, ^{n}C_r\,\, p^r {(1-p)}^{n-r} dr
+$$</p>
+
+<p>We follow a similar procedure to reach $(3)$</p>
+
+<p>$$
+E[r^2] = \int r\,\, ^{n}C_{r-1}\,\, p^r {(1-p)}^{n-r} dr
+$$</p>
+
+<p>Now we split the equation using $r = (r-1) + 1$,</p>
+
+<p>$$
+E[r^2] = \int (r-1)\,\, ^{n}C<em>{r-1}\,\, p^r {(1-p)}^{n-r} dr + \int \,^{n}C</em>{r-1}\,\, p^r {(1-p)}^{n-r} dr
+$$</p>
+
+<p>The second term is same as $(4)$, then we cancel out $r-1$ in the first part to get</p>
+
+<p>$$
+E[r^2] = \int ^{n}C_{r-2}\,\, p^r {(1-p)}^{n-r} dr + np
+$$</p>
+
+<p>now we break up the equation with $n! = n(n-1)\, (n-2)!$ and split $p^r = p^2\, p^(r-2)$</p>
+
+<p>$$
+E[r^2] = p^2 n(n-1)\int ^{n}C_{r-2}\,\, p^r {(1-p)}^{n-r} dr + np
+$$</p>
+
+<p>The product inside the integral is the Binomial distribution</p>
+
+<p>$$
+E[r^2] = p^2 n(n-1)\int Binomial(r-2,n-2,p) dr + np
+$$</p>
+
+<p>so we get,</p>
+
+<p>$$
+E[r^2] = p^2 n^2 - p^2 n  + np
+$$</p>
+
+<p>Plugging back $E[r^2]$, $E[r]$ into the definition of $Var&reg;$ in $(5)$</p>
+
+<p>$$
+Var&reg; = p^2 n^2 - p^2 n  + np - (np)^2
+$$</p>
+
+<p>Cancelling out and grouping terms we get</p>
+
+<p>$$
+Var&reg; = np(1-p)
+$$</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://utkarshdevd.github.io/posts/startup/"><i class="fa fa-chevron-circle-left"></i> Startup</a>
+        </li>
+        
+        
+    </ul>
+</section>
+    
+
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
